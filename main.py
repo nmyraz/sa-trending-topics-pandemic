@@ -1,12 +1,22 @@
 import json
+import pandas as pd
+from pathlib import Path
+import csv
 
 if __name__ == "__main__":
-    # Open file with scraped data
-    scrapedData = open("ismail-sabri-vs-remy-ishak.json")
+    #set filename for input and output
+    fileName = "umno-20-21"
+    input = f"{fileName}.json"
+    output = f"{fileName}.csv"
 
-    # Parse scraped data to Dict using json.load()
-    parsedScrapedData = json.load(scrapedData)
+    #set path to file
+    p = Path(f'scraped-dataset-json/{input}')
 
-    # Iterate through the parsed data to input in csv
-    for data in parsedScrapedData:
-        print(data)
+    #read json
+    with p.open('r', encoding='utf-8') as f:
+        data = json.loads(f.read())
+
+    #create dataframe
+    df = pd.json_normalize(data)
+
+    df.to_csv(f'scraped-dataset-csv/{output}', index=False, encoding='utf-8')
