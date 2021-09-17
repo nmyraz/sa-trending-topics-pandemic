@@ -8,12 +8,12 @@ from googletrans import Translator
 if __name__ == "__main__":
 
     #set filename for input and output
-    fileName = "umno-19-20"
+    fileName = "umno-19-20-cleaned"
     input = f"{fileName}.csv"
-    output = f"{fileName}-cleaned.csv"
+    output = f"{fileName}-translated.csv"
 
     # Read csv file into a pandas dataframe
-    df = pd.read_csv(f'scraped-dataset-csv/{input}')
+    df = pd.read_csv(f'cleaned-csv-dataset/{input}')
 
     # Take a look at the first few rows
     print(df.head())
@@ -30,10 +30,10 @@ if __name__ == "__main__":
         return result.text.lower()
 
 
-    with open ("twint-master/dataset-selangor-translated.csv", "w") as file:
+    with open (f'translated-csv-dataset/{output}', 'w') as file:
         writer = csv.writer(file)
         # bagi nama column untuk buffer file tersebut
-        writer.writerow(["tweet"])
+        writer.writerow(["content"])
 
-    for index, row in df.iterrows():
-        writer.writerow([transText(row["tweet"])])
+        for index, row in df.iterrows():
+            writer.writerow([transText(row["content"])])

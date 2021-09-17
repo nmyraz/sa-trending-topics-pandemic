@@ -7,7 +7,7 @@ import time
 if __name__ == "__main__":
 
     #set filename for input and output
-    fileName = "kedah-vs-phase1"
+    fileName = "kerajaangagal"
     input = f"{fileName}.csv"
     output = f"{fileName}-cleaned.csv"
 
