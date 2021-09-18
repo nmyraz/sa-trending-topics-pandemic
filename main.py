@@ -5,7 +5,7 @@ import csv
 
 if __name__ == "__main__":
     #set filename for input and output
-    fileName = "zuraida-vs-onlyinmalaysia"
+    fileName = "dine"
     input = f"{fileName}.json"
     output = f"{fileName}.csv"
 
