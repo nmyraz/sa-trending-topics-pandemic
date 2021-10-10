@@ -7,12 +7,12 @@ import time
 if __name__ == "__main__":
 
     #set filename for input and output
-    fileName = "lawan"
+    fileName = "dataset-5"
     input = f"{fileName}.csv"
-    output = f"{fileName}1-cleaned.csv"
+    output = f"{fileName}-content.csv"
 
     # Read csv file into a pandas dataframe
-    df = pd.read_csv(f'experiment-dataset/{input}')
+    df = pd.read_csv(f'experiment-dataset/dataset/{input}')
 
     # Take a look at the first few rows
     print(df.head())
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
         return data
 
-    with open (f'experiment-dataset/{output}', "w") as file:
+    with open (f'experiment-dataset/dataset/content/{output}', "w") as file:
         writer = csv.writer(file)
         writer.writerow(["content"])
 
