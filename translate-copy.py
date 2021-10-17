@@ -8,7 +8,7 @@ from googletrans import Translator
 if __name__ == "__main__":
 
     #set filename for input and output
-    fileName = "dataset-5"
+    fileName = "dataset-5-1"
     input = f"{fileName}.csv"
     output = f"{fileName}-translated.csv"
 
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         return result.text.lower()
 
 
-    with open (f'experiment-dataset/dataset/content/translated/{output}', 'w') as file:
+    with open (f'experiment-dataset/dataset/content/translated/{output}', 'w', encoding='utf-8') as file:
         writer = csv.writer(file)
         # bagi nama column untuk buffer file tersebut
         writer.writerow(["content"])
