@@ -5,18 +5,18 @@ import csv
 
 if __name__ == "__main__":
     #set filename for input and output
-    fileName = "prime-minister-selangor"
+    fileName = "dine"
     input = f"{fileName}.json"
     output = f"{fileName}.csv"
 
     #set path to file
-    p = Path(f'scraped-dataset-json/{input}')
+    p = f'scraped-dataset-json/{input}'
 
     #read json
-    with p.open('r', encoding='utf-8') as f:
+    with open(p, 'rb') as f:
         data = json.loads(f.read())
 
     #create dataframe
     df = pd.json_normalize(data)
 
-    df.to_csv(f'scraped-dataset-csv/{output}', index=False, encoding='utf-8')
+    df.to_csv(f'scraped-raw-dataset-csv/{output}', index=False)
