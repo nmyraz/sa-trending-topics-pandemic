@@ -7,12 +7,12 @@ import time
 if __name__ == "__main__":
 
     #set filename for input and output
-    fileName = "umno-20-21"
+    fileName = "pn-20"
     input = f"{fileName}.csv"
     output = f"{fileName}-cleaned.csv"
 
     # Read csv file into a pandas dataframe
-    df = pd.read_csv(f'scraped-dataset-csv/{input}')
+    df = pd.read_csv(f'scraped-raw-dataset-csv/{input}')
 
     # Take a look at the first few rows
     print(df.head())
