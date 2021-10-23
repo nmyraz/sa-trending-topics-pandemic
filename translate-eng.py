@@ -8,7 +8,7 @@ from googletrans import Translator
 if __name__ == "__main__":
 
     #set filename for input and output
-    fileName = "dataset-3"
+    fileName = "dataset-7"
     input = f"{fileName}.csv"
     output = f"{fileName}-translated.csv"
 
